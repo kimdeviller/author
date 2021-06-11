@@ -17,9 +17,9 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 // unsecure routes
-$router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('/users', ['uses' => 'UserController@getUsers']);
-});
+// $router->group(['prefix' => 'api'], function () use ($router) {
+//     $router->get('/users', ['uses' => 'UserController@getUsers']);
+// });
 // more simple routes
 $router->get('/authors', 'AuthorController@index'); // Get all authors from Authors Service
 $router->post('/authors', 'AuthorController@add'); // Create a new author from Authors Service

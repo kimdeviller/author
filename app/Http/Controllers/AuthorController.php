@@ -112,18 +112,19 @@ change', Response::HTTP_UNPROCESSABLE_ENTITY);
     {
         $authors = Author::findOrFail($id);
         $authors->delete();
-        return $this->successResponse($authors);
+        //return $this->successResponse($authors);
         // old code
-        /*
-        $user = User::where('userid', $id)->first();
-        if($user){
-        $user->delete();
-        return $this->successResponse($user);
+        
+        $authors = Author::where('authorid', $id)->first();
+        if($authors){
+        $authors->delete();
+        return $this->successResponse($authors);
         }
+
         {
-        return $this->errorResponse('User ID Does Not Exists',
+        return $this->errorResponse('Author ID Does Not Exists',
         Response::HTTP_NOT_FOUND);
         }
-        */
+        
     }
 }
